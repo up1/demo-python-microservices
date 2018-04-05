@@ -1,0 +1,61 @@
+{
+	"info": {
+		"name": "demo",
+		"_postman_id": "c503f1ae-c2d1-b8ca-9456-f51259532d38",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://httpbin.org/get?name=somkiat",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2809c9b6-a887-48c0-83a4-5ed63d1dbc42",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.args.name).to.eql(\"somkiat\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://httpbin.org/get?name=somkiat",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "somkiat",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
